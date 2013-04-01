@@ -1036,7 +1036,7 @@ NSString *g_deviceUUID = nil;
 
 -(UGClientResponse *)getEntityConnections: (NSString *)connectorType connectorID:(NSString *)connectorID connectionType:(NSString *)connectionType query:(UGQuery *)query
 {
-    NSMutableString *url = [self createURL:connectorType append2:connectorID append3:connectionType];
+    NSMutableString *url = [self createURL:connectorType append2:connectorID append3:@"connecting" append4:connectionType];
     [self appendQueryToURL:url query:query];
     return [self httpTransaction:url op:kUGHTTPPost opData:nil];
 }
